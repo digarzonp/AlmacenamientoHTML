@@ -31,10 +31,18 @@ function construirFilas(){
 
     for(let k=0; k<fuentes.length;k++){
 
-        let = miFuente= fuentes[k];
+        let  miFuente= fuentes[k];
     
-        for(let i=0; i<window.miFuente.length; i++){
+        for(let i=0; i< miFuente.length; i++){
+            
             let cuerpoTabla=document.getElementById("cuerpoTabla");
+            
+            let clave = miFuente.key(i);
+            let valor = miFuente.getItem(miFuente.key(i));
+
+            cuerpoTabla.innerHTML = cuerpoTabla.innerHTML + `<tr><td>${clave}</td><td>${valor}</td></tr>`
+
+            /*
             let fila=document.createElement("tr");
         
             //primera celda
@@ -54,7 +62,7 @@ function construirFilas(){
 
         
             cuerpoTabla.appendChild(fila);
-
+            */
         }
     }
 }
