@@ -34,13 +34,24 @@ function construirFilas(){
         let  miFuente= fuentes[k];
     
         for(let i=0; i< miFuente.length; i++){
-            
+
             let cuerpoTabla=document.getElementById("cuerpoTabla");
-            
+
+            let fila = cuerpoTabla.insertRow(i);
+            let celda =  fila.insertCell(0)
+            let texto=document.createTextNode(miFuente.key(i))
+            celda.appendChild(texto);
+
+            celda= fila.insertCell(1);
+            texto=document.createTextNode(miFuente.getItem(miFuente.key(i)))
+            celda.appendChild(texto);
+
+            /*
+            let cuerpoTabla=document.getElementById("cuerpoTabla");
             let clave = miFuente.key(i);
             let valor = miFuente.getItem(miFuente.key(i));
-
-            cuerpoTabla.innerHTML = cuerpoTabla.innerHTML + `<tr><td>${clave}</td><td>${valor}</td></tr>`
+            cuerpoTabla.innerHTML = cuerpoTabla.innerHTML + `<tr><td>${clave}</td><td>${valor}</td></tr>`;
+            */
 
             /*
             let fila=document.createElement("tr");
